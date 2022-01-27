@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TEXT_INPUT_TITLE_STYLE" parent="@android:style/TextAppearance">
+        <item name="layout_constraintWidth_percent">0.86</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/secondary_text_size</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:letterSpacing">0.2</item>
+        <item name="fontFamily">@font/helveticaneue_bold</item>
+        <item name="android:fontFamily">@font/helveticaneue_bold</item>
+        <item name="android:paddingTop">@dimen/primary_title_vertical_padding</item>
+    </style>
+
+    <style name="PRIMARY_BTN_STYLE">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:elevation">@dimen/primary_elevation</item>
+        <item name="android:gravity">center</item>
+        <item name="android:letterSpacing">0.3</item>
+        <item name="android:background">@drawable/shape_primary_btn</item>
+        <item name="android:outlineProvider">background</item>
+        <item name="android:textSize">@dimen/primary_text_size</item>
+        <item name="fontFamily">@font/helveticaneue_bold</item>
+        <item name="android:fontFamily">@font/helveticaneue_bold</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintWidth_percent">0.86</item>
+        <item name="layout_constraintDimensionRatio">6.5</item>
+    </style>
+
+    <style name="TEXT_INPUT_HOLDER_STYLE">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="errorEnabled">true</item>
+        <item name="layout_constraintDimensionRatio">6.2</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintWidth_percent">0.86</item>
+    </style>
+
+    <style name="PRIMARY_INPUT_FIELD_STYLE">
+        <item name="android:background">@drawable/shape_primary_input_field</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:lines">1</item>
+        <item name="maxLines">1</item>
+        <item name="android:inputType">textNoSuggestions</item>
+        <item name="android:textColor">@color/color_carbon</item>
+        <item name="android:textSize">@dimen/primary_text_size</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:letterSpacing">0.25</item>
+        <item name="fontFamily">@font/helveticaneue_medium</item>
+        <item name="android:fontFamily">@font/helveticaneue_medium</item>
+        <item name="android:paddingBottom">@dimen/primary_input_field_padding</item>
+        <item name="android:paddingTop">@dimen/primary_input_field_padding</item>
+        <item name="android:paddingStart">@dimen/primary_input_field_padding</item>
+        <item name="android:paddingEnd">@dimen/primary_input_field_padding</item>
+    </style>
+</resources>

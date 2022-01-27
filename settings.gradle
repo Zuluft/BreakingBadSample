@@ -1,0 +1,56 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+rootProject.name = "BreakingBadApp"
+include ':app'
+
+
+//commons
+include ':api'
+project(':api').projectDir = new File('commons/api')
+
+include ':navigation'
+project(':navigation').projectDir = new File('commons/navigation')
+
+include ':database'
+project(':database').projectDir = new File('commons/database')
+
+include ':shared'
+project(':shared').projectDir = new File('commons/shared')
+
+include ':koin_api'
+project(':koin_api').projectDir = new File('commons/koin_api')
+
+include ':ui_components'
+project(':ui_components').projectDir = new File('commons/ui_components')
+
+include ':core'
+project(':core').projectDir = new File('commons/core')
+
+include ':mocks'
+project(':mocks').projectDir = new File('commons/mocks')
+
+include ':koin_test_api'
+project(':koin_test_api').projectDir = new File('commons/koin_test_api')
+
+
+//features
+include ':intro'
+project(':intro').projectDir = new File('features/intro')
+
+include ':login'
+project(':login').projectDir = new File('features/login')
+
+include ':registration'
+project(':registration').projectDir = new File('features/registration')
+
+include ':restore_password'
+project(':restore_password').projectDir = new File('features/restore_password')
+
+
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="transition_logo" translatable="false">transition_logo</string>
+    <string name="transition_primary_component" translatable="false">transition_primary_component</string>
+    <string name="transition_secondary_component" translatable="false">transition_secondary_component</string>
+    <string name="transition_primary_field" translatable="false">transition_primary_field</string>
+    <string name="transition_secondary_field" translatable="false">transition_secondary_field</string>
+</resources>

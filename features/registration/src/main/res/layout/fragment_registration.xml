@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.28" />
+
+    <com.zuluft.ui_components.input_field.TextField
+        android:id="@+id/tfUsernameTitle"
+        style="@style/TEXT_INPUT_TITLE_STYLE"
+        android:layout_marginTop="@dimen/primary_input_field_padding"
+        android:text="@string/registration_screen_username_hint_text"
+        app:layout_constraintTop_toBottomOf="@id/topGuideline"
+        tools:ignore="MissingConstraints" />
+
+    <com.zuluft.ui_components.input_field.InputFieldHolder
+        android:id="@+id/ifhUsername"
+        style="@style/TEXT_INPUT_HOLDER_STYLE"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/color_crusoe"
+        app:layout_constraintTop_toBottomOf="@id/tfUsernameTitle"
+        tools:ignore="MissingConstraints">
+
+        <com.zuluft.ui_components.input_field.InputField
+            android:id="@+id/ifUsername"
+            style="@style/PRIMARY_INPUT_FIELD_STYLE"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:imeOptions="actionNext"
+            android:inputType="textNoSuggestions"
+            android:nextFocusDown="@id/ifPassword" />
+
+    </com.zuluft.ui_components.input_field.InputFieldHolder>
+
+    <com.zuluft.ui_components.input_field.TextField
+        android:id="@+id/tfEmailTitle"
+        style="@style/TEXT_INPUT_TITLE_STYLE"
+        android:layout_marginTop="@dimen/primary_input_field_padding"
+        android:text="@string/registration_screen_email_hint_text"
+        app:layout_constraintTop_toBottomOf="@id/ifhUsername"
+        tools:ignore="MissingConstraints" />
+
+    <com.zuluft.ui_components.input_field.InputFieldHolder
+        android:id="@+id/ifhEmail"
+        style="@style/TEXT_INPUT_HOLDER_STYLE"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/color_crusoe"
+        app:layout_constraintTop_toBottomOf="@id/tfEmailTitle"
+        tools:ignore="MissingConstraints">
+
+        <com.zuluft.ui_components.input_field.InputField
+            android:id="@+id/ifEmail"
+            style="@style/PRIMARY_INPUT_FIELD_STYLE"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:nextFocusDown="@id/ifPassword" />
+
+    </com.zuluft.ui_components.input_field.InputFieldHolder>
+
+    <com.zuluft.ui_components.input_field.TextField
+        android:id="@+id/tfPasswordTitle"
+        style="@style/TEXT_INPUT_TITLE_STYLE"
+        android:layout_marginTop="@dimen/primary_input_field_padding"
+        android:text="@string/registration_screen_password_hint_text"
+        app:layout_constraintTop_toBottomOf="@id/ifhEmail"
+        tools:ignore="MissingConstraints" />
+
+    <com.zuluft.ui_components.input_field.InputFieldHolder
+        android:id="@+id/ifhPassword"
+        style="@style/TEXT_INPUT_HOLDER_STYLE"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/color_crusoe"
+        app:layout_constraintTop_toBottomOf="@id/tfPasswordTitle"
+        tools:ignore="MissingConstraints">
+
+        <com.zuluft.ui_components.input_field.InputField
+            android:id="@+id/ifPassword"
+            style="@style/PRIMARY_INPUT_FIELD_STYLE"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword" />
+
+    </com.zuluft.ui_components.input_field.InputFieldHolder>
+
+
+    <com.zuluft.ui_components.input_field.TextField
+        android:id="@+id/tfRePasswordTitle"
+        style="@style/TEXT_INPUT_TITLE_STYLE"
+        android:layout_marginTop="@dimen/primary_input_field_padding"
+        android:text="@string/registration_screen_re_password_hint_text"
+        app:layout_constraintTop_toBottomOf="@id/ifhPassword"
+        tools:ignore="MissingConstraints" />
+
+    <com.zuluft.ui_components.input_field.InputFieldHolder
+        android:id="@+id/ifhRePassword"
+        style="@style/TEXT_INPUT_HOLDER_STYLE"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/color_crusoe"
+        app:layout_constraintTop_toBottomOf="@id/tfRePasswordTitle"
+        tools:ignore="MissingConstraints">
+
+        <com.zuluft.ui_components.input_field.InputField
+            android:id="@+id/ifRePassword"
+            style="@style/PRIMARY_INPUT_FIELD_STYLE"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword" />
+
+    </com.zuluft.ui_components.input_field.InputFieldHolder>
+
+
+    <com.zuluft.ui_components.button.PrimaryButton
+        android:id="@+id/btnRegister"
+        style="@style/PRIMARY_BTN_STYLE"
+        android:layout_marginTop="@dimen/primary_input_field_padding"
+        android:background="@drawable/shape_secondary_btn"
+        android:text="@string/registration_screen_register_btn_text"
+        android:transitionName="@string/transition_primary_component"
+        app:layout_constraintTop_toBottomOf="@id/ifhRePassword"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

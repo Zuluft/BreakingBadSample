@@ -1,0 +1,30 @@
+[
+  {
+    "id": 123,
+    "username": "user1",
+    "password": "123456",
+    "fullName": "Mehdi Benatia",
+    "email": "aaa@bb.cc"
+  },
+  {
+    "id": 124,
+    "username": "user2",
+    "password": "123456",
+    "fullName": "Mehdi Benatia",
+    "email": "aaa@bb.cc"
+  },
+  {
+    "id": 125,
+    "username": "user4",
+    "password": "123456",
+    "fullName": "Mehdi Benatia",
+    "email": "aaa@bb.cc"
+  },
+  {
+    "id": 126,
+    "username": "user3",
+    "password": "123456",
+    "fullName": "Mehdi Benatia",
+    "email": "aaa@bb.cc"
+  }
+]

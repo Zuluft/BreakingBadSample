@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="feature_intro" type="id" />
+    <item name="feature_login" type="id" />
+    <item name="feature_registration" type="id" />
+    <item name="feature_restore_password" type="id" />
+</resources>

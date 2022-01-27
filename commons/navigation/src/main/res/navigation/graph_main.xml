@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/graph_main"
+    app:startDestination="@id/globalEntryPoint">
+
+    <fragment
+        android:id="@+id/globalEntryPoint"
+        android:name="com.zuluft.navigation.entry_point.GlobalEntryPoint">
+        <action
+            android:id="@+id/action_globalEntryPoint_to_feature_intro"
+            app:destination="@id/feature_intro"
+            app:popUpTo="@id/graph_main" />
+    </fragment>
+
+    <include app:graph="@navigation/graph_feature_intro" />
+    <include app:graph="@navigation/graph_feature_login" />
+    <include app:graph="@navigation/graph_feature_registration" />
+    <include app:graph="@navigation/graph_feature_restore_password" />
+
+</navigation>

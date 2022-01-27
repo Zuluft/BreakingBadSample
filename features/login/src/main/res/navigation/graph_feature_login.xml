@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/feature_login"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.zuluft.login.presentation.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_feature_registration"
+            app:destination="@id/feature_registration" />
+        <action
+            android:id="@+id/action_loginFragment_to_feature_restore_password"
+            app:destination="@id/feature_restore_password" />
+    </fragment>
+
+    <include app:graph="@navigation/graph_feature_restore_password" />
+    <include app:graph="@navigation/graph_feature_registration" />
+</navigation>
