@@ -4,9 +4,6 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'zulu.bb.api'
-version = '1.0'
-
 android {
     compileSdk 31
 
@@ -50,10 +47,17 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId = 'zulu.bb.api'
-                artifactId = 'base-api'
+                groupId = 'zulu.base'
+                artifactId = 'api'
+                version = '1.0'
+            }
+            debug(MavenPublication) {
+                from components.debug
+                groupId = 'zulu.base'
+                artifactId = 'api'
                 version = '1.0'
             }
         }
     }
 }
+
