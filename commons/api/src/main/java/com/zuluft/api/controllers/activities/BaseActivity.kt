@@ -50,11 +50,11 @@ abstract class BaseActivity<VIEW_STATE, VIEW_MODEL : BaseViewModel<VIEW_STATE>> 
     private fun subscribeViewModel() {
         viewModel = provideViewModel()
         viewModel.getLiveViewState()
-            .observe(this,
-                {
-                    reflectState(it)
-                    lastViewState = it
-                })
+            .observe(this
+            ) {
+                reflectState(it)
+                lastViewState = it
+            }
     }
 
     fun getViewModel(): VIEW_MODEL? {

@@ -33,9 +33,9 @@ android {
 
 dependencies {
     api project(':api')
-    api "org.koin:koin-android:2.0.1"
-    api "org.koin:koin-androidx-scope:2.0.1"
-    api "org.koin:koin-android-viewmodel:2.0.1"
+    api "io.insert-koin:koin-android:3.2.0"
+    api "io.insert-koin:koin-androidx-scope:2.0.1"
+    api "io.insert-koin:koin-android-viewmodel:2.0.1"
 }
 
 afterEvaluate {

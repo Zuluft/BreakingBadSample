@@ -12,19 +12,19 @@ import org.koin.test.inject
 
 class IntroTest : BaseViewModelTest<IntroViewState, IntroViewModel>() {
 
-    private val viewModel by inject<IntroViewModel>()
+  private val viewModel by inject<IntroViewModel>()
 
-    override fun provideAppModules(): List<Module> {
-        return listOf(INTRO_MODULE)
-    }
+  override fun provideAppModules(): List<Module> {
+    return listOf(INTRO_MODULE)
+  }
 
-    override fun provideViewModel(): IntroViewModel {
-        return viewModel
-    }
+  override fun provideViewModel(): IntroViewModel {
+    return viewModel
+  }
 
-    @Test
-    fun `test login redirection after intro scene`() {
-        getViewModel().introSceneFinishedIntent()
-        Assert.assertEquals(getViewState()?.goToLogin?.getValue(), true)
-    }
+  @Test
+  fun `test login redirection after intro scene`() {
+    getViewModel().introSceneFinishedIntent()
+    Assert.assertEquals(getViewState()?.goToLogin?.getValue(), true)
+  }
 }

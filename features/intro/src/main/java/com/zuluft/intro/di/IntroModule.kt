@@ -8,11 +8,11 @@ import org.koin.dsl.bind
 import org.koin.dsl.module
 
 val INTRO_MODULE = module(override = true) {
-    viewModel {
-        IntroViewModel()
-    }
+  viewModel {
+    IntroViewModel()
+  }
 
-    single {
-        LogoControllerImpl()
-    } bind LogoController::class
+  single {
+    LogoControllerImpl()
+  } bind LogoController::class
 }

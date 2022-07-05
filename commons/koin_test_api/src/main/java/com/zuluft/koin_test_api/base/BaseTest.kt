@@ -14,27 +14,27 @@ import org.koin.test.KoinTest
 
 abstract class BaseTest : KoinTest {
 
-    @Rule
-    @JvmField
-    val instantExecutorRule = InstantTaskExecutorRule()
+  @Rule
+  @JvmField
+  val instantExecutorRule = InstantTaskExecutorRule()
 
-    abstract fun provideAppModules(): List<Module>
+  abstract fun provideAppModules(): List<Module>
 
 
-    @Before
-    fun setupKoinGraph() {
-        RxJavaPlugins.setIoSchedulerHandler { Schedulers.trampoline() }
-        RxJavaPlugins.setComputationSchedulerHandler { Schedulers.trampoline() }
-        RxJavaPlugins.setNewThreadSchedulerHandler { Schedulers.trampoline() }
-        RxAndroidPlugins.setInitMainThreadSchedulerHandler { Schedulers.trampoline() }
-        startKoin {
-            modules(provideAppModules())
-        }
+  @Before
+  fun setupKoinGraph() {
+    RxJavaPlugins.setIoSchedulerHandler { Schedulers.trampoline() }
+    RxJavaPlugins.setComputationSchedulerHandler { Schedulers.trampoline() }
+    RxJavaPlugins.setNewThreadSchedulerHandler { Schedulers.trampoline() }
+    RxAndroidPlugins.setInitMainThreadSchedulerHandler { Schedulers.trampoline() }
+    startKoin {
+      modules(provideAppModules())
     }
+  }
 
-    @After
-    @Throws(Throwable::class)
-    fun destroyKoinGraph() {
-        stopKoin()
-    }
+  @After
+  @Throws(Throwable::class)
+  fun destroyKoinGraph() {
+    stopKoin()
+  }
 }
