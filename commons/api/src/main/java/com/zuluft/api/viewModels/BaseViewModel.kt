@@ -10,43 +10,48 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
 abstract class BaseViewModel<VIEW_STATE> :
-    ViewModel(),
-    DisposablesHolder {
+  ViewModel(),
+  DisposablesHolder {
 
-    protected val compositeDisposable = CompositeDisposable()
+  protected val compositeDisposable = CompositeDisposable()
 
-    private val liveViewState = MutableLiveData<VIEW_STATE>()
+  private val liveViewState = MutableLiveData<VIEW_STATE>()
 
-    private var currentState: VIEW_STATE? = null
+  override fun registerDisposables(vararg disposables: Disposable) {
+    compositeDisposable.addAll(*disposables)
+  }
 
-    override fun registerDisposables(vararg disposables: Disposable) {
-        compositeDisposable.addAll(*disposables)
-    }
+  init {
+    pushInitialState()
+  }
 
-    override fun onCleared() {
-        super.onCleared()
-        clearDisposables()
-    }
+  private fun pushInitialState() {
+    setState(getInitialState())
+  }
 
-    protected fun setState(constructedState: VIEW_STATE?) {
-        currentState = constructedState
-        liveViewState.postValue(currentState ?: getInitialState())
-    }
+  override fun onCleared() {
+    super.onCleared()
+    clearDisposables()
+  }
 
-    protected fun constructState(newStateFactory: VIEW_STATE.() -> VIEW_STATE): VIEW_STATE {
-        return (liveViewState.value ?: getInitialState()).newStateFactory()
-    }
+  protected fun setState(constructedState: VIEW_STATE) {
+    liveViewState.postValue(constructedState)
+  }
 
-    fun getLastViewState(): VIEW_STATE? {
-        return currentState
-    }
+  protected fun constructState(newStateFactory: VIEW_STATE.() -> VIEW_STATE): VIEW_STATE {
+    return (liveViewState.value ?: getInitialState()).newStateFactory()
+  }
 
-    override fun clearDisposables() {
-        compositeDisposable.dispose()
-        compositeDisposable.clear()
-    }
+  fun getLastViewState(): VIEW_STATE? {
+    return liveViewState.value
+  }
 
-    protected abstract fun getInitialState(): VIEW_STATE
+  override fun clearDisposables() {
+    compositeDisposable.dispose()
+    compositeDisposable.clear()
+  }
 
-    fun getLiveViewState(): LiveData<VIEW_STATE> = liveViewState
+  protected abstract fun getInitialState(): VIEW_STATE
+
+  fun getLiveViewState(): LiveData<VIEW_STATE> = liveViewState
 }
